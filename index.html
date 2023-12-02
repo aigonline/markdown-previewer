@@ -50,13 +50,15 @@ sayHello('World');
 
 **Bolded Text:** This is **bold** text.
 ` ;
-      const htmlContent = marked(defaultMarkdownContent);
-      htmlOutput.innerHTML = htmlContent;
+      const editorContent = marked(defaultMarkdownContent);
+      markdownInput.innerHTML = editorContent;
       markdownInput.addEventListener('input', handleEventListener)
       function handleEventListener() {
           const markdownText = markdownInput.value;
           const htmlContent = marked(markdownText);
           htmlOutput.innerHTML = htmlContent;
-      };</script>
+      };
+  </script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
