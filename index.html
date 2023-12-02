@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.5/marked.min.js"></script>
+    <script>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</script>
+  </head>
+  <body>
+    <h1>Markdown Previewer</h1>
+
+    <textarea id="editor" class="markdown">
+      
+    </textarea>
+    <div id="preview" class="html">
+    </div>
+    <script>const markdownInput = document.getElementById('editor');
+      const htmlOutput = document.getElementById('preview');
+      document.addEventListener('DOMContentLoaded', handlePreview)
+      function handlePreview () {
+      const markdownInput = document.getElementById('editor');
+      const htmlOutput = document.getElementById('preview');
+      }
+      defaultMarkdownContent = `# Markdown Previewer
+
+## Getting Started
+
+This is a markdown previewer built with [Marked](https://github.com/markedjs/marked).
+
+**Inline Code:** Use backticks for inline code, like \`this\`.
+
+**Code Block:**
+
+\`\`\`javascript
+function sayHello(name) {
+  console.log(\`Hello, ${name}\`);
+}
+
+sayHello('World');
+\`\`\`
+
+* List item 1
+* List item 2
+
+> Blockquote
+
+![Image of a cat](catphotoapp.jpeg)
+
+**Bolded Text:** This is **bold** text.
+` ;
+      const htmlContent = marked(defaultMarkdownContent);
+      htmlOutput.innerHTML = htmlContent;
+      markdownInput.addEventListener('input', handleEventListener)
+      function handleEventListener() {
+          const markdownText = markdownInput.value;
+          const htmlContent = marked(markdownText);
+          htmlOutput.innerHTML = htmlContent;
+      };</script>
+  </body>
+</html>
