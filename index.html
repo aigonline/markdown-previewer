@@ -10,17 +10,7 @@
   <body>
     <h1>Markdown Previewer</h1>
 
-    <textarea id="editor" class="markdown" placeholder="Headers: Use # for headings (e.g., # Heading 1).
-Emphasis: Use * or _ for italic, ** or __ for bold.
-Lists: - for unordered, numbers for ordered lists.
-Links: [Link text](URL).
-Images: ![Alt text](image-url.jpg).
-Code Blocks: Use backticks for inline code and triple backticks for fenced code blocks with optional language specifier.
-Blockquotes: > for block quotes.
-Horizontal Rule: ---.
-Tables: Use | for columns and - for headers in tables.
-Escaping Characters: Use \ before characters like *, \, or _ to display them as literals.">
-    
+    <textarea id="editor" class="markdown">
     </textarea>
     <div id="preview" class="html">
     </div>
@@ -31,10 +21,16 @@ Escaping Characters: Use \ before characters like *, \, or _ to display them as 
       const markdownInput = document.getElementById('editor');
       const htmlOutput = document.getElementById('preview');
       }
-      defaultMarkdownContent = "# Heading 1
-## Heading 2
-### Heading 3
-";
+      defaultMarkdownContent = `# Heading 1
+
+This is a paragraph with **bold** and *italic* text.
+
+- List item 1
+- List item 2
+  - Subitem A
+  - Subitem B
+
+[Link to example](https://example.com)`;
       const editorContent = marked(defaultMarkdownContent);
       markdownInput.innerHTML = editorContent;
       markdownInput.addEventListener('input', handleEventListener)
