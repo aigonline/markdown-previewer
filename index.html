@@ -21,12 +21,7 @@
       const markdownInput = document.getElementById('editor');
       const htmlOutput = document.getElementById('preview');
       }
-      defaultMarkdownContent = `# Heading 1
-
-This is a paragraph with **bold** and *italic* text.
-
-- List item 1
-[Link to example](https://example.com)`;
+      defaultMarkdownContent = `**HELLO**`;
       const editorContent = marked(defaultMarkdownContent);
       markdownInput.innerHTML = editorContent;
       markdownInput.addEventListener('input', handleEventListener)
