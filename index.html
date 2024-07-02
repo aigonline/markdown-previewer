@@ -2,17 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>HTML + CSS</title>
+    <title>Markdown Previewer</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.5/marked.min.js"></script>
-    <script>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</script>
   </head>
   <body>
     <h1>Markdown Previewer</h1>
 
-    <textarea id="editor" class="markdown">
-      
+    <textarea id="editor" class="markdown" placeholder="Headers: Use # for headings (e.g., # Heading 1).
+Emphasis: Use * or _ for italic, ** or __ for bold.
+Lists: - for unordered, numbers for ordered lists.
+Links: [Link text](URL).
+Images: ![Alt text](image-url.jpg).
+Code Blocks: Use backticks for inline code and triple backticks for fenced code blocks with optional language specifier.
+Blockquotes: > for block quotes.
+Horizontal Rule: ---.
+Tables: Use | for columns and - for headers in tables.
+Escaping Characters: Use \ before characters like *, \, or _ to display them as literals.">
+    
     </textarea>
     <div id="preview" class="html">
     </div>
@@ -23,33 +31,10 @@
       const markdownInput = document.getElementById('editor');
       const htmlOutput = document.getElementById('preview');
       }
-      defaultMarkdownContent = `# Markdown Previewer
-
-## Getting Started
-
-This is a markdown previewer built with [Marked](https://github.com/markedjs/marked).
-
-**Inline Code:** Use backticks for inline code, like \`this\`.
-
-**Code Block:**
-
-\`\`\`javascript
-function sayHello(name) {
-  console.log(\`Hello, ${name}\`);
-}
-
-sayHello('World');
-\`\`\`
-
-* List item 1
-* List item 2
-
-> Blockquote
-
-![Image of a cat](catphotoapp.jpeg)
-
-**Bolded Text:** This is **bold** text.
-` ;
+      defaultMarkdownContent = "# Heading 1
+## Heading 2
+### Heading 3
+";
       const editorContent = marked(defaultMarkdownContent);
       markdownInput.innerHTML = editorContent;
       markdownInput.addEventListener('input', handleEventListener)
